@@ -31,8 +31,16 @@ btAdd.addEventListener("click", () => {
 
 container.addEventListener("click", ev => {
     const btClose = ev.target.closest(".bt-close")
+    const btSalvar = ev.target.closest(".bt-salvar")
+    const modal = ev.target.closest(".modal")
+
     if (btClose) {
-        const modal = ev.target.closest(".modal")
         modal.remove()
     }
+
+    if(btSalvar) {
+        const btCancel = modal.querySelector(".bt-close")
+        btCancel.innerHTML = "Excluir"
+    }
+
 })
